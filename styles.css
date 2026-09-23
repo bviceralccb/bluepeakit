@@ -319,30 +319,6 @@ h1 {
 
 .button-ghost svg { width: 18px; }
 
-.trust-row {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 18px 25px;
-  margin-top: 40px;
-  color: rgba(255, 255, 255, 0.6);
-  font-size: 0.82rem;
-  font-weight: 600;
-}
-
-.trust-row span {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.trust-row i {
-  width: 7px;
-  height: 7px;
-  border-radius: 50%;
-  background: var(--blue-300);
-  box-shadow: 0 0 0 4px rgba(117, 209, 255, 0.1);
-}
-
 .network-card {
   position: relative;
   overflow: hidden;
@@ -937,7 +913,6 @@ input:focus, select:focus, textarea:focus {
   .hero-layout { padding-top: 125px; gap: 48px; }
   .hero-actions { display: grid; }
   .button { width: 100%; }
-  .trust-row { display: grid; justify-content: start; width: max-content; margin-inline: auto; text-align: left; }
 
   .network-node { padding: 7px 8px; font-size: 0.65rem; }
   .network-node .node-icon { width: 23px; height: 23px; }
