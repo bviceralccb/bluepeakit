@@ -886,7 +886,7 @@ input:focus, select:focus, textarea:focus {
   .hero { min-height: auto; }
   .hero-layout { grid-template-columns: 1fr; min-height: auto; padding: 145px 0 80px; }
   .hero-copy { text-align: center; }
-  .hero-copy .eyebrow, .hero-actions, .trust-row { justify-content: center; }
+  .hero-copy .eyebrow, .hero-actions { justify-content: center; }
   h1 { margin-inline: auto; }
   .hero-lede { margin-inline: auto; }
   .network-card { width: min(100%, 560px); margin-inline: auto; }
