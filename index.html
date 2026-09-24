@@ -22,7 +22,7 @@
       <div class="shell nav-wrap">
         <a class="brand" href="#top" aria-label="BluePeak Managed IT home">
           <span class="brand-mark" aria-hidden="true">
-            <svg viewBox="0 0 48 48" role="img">
+            <svg aria-hidden="true" focusable="false" viewBox="0 0 48 48">
               <path d="M7 34.5 19 16l5.2 8L29 17l12 17.5H7Z" />
               <path class="brand-signal" d="M13 34.5h28" />
             </svg>
@@ -57,7 +57,7 @@
       </div>
     </header>
 
-    <main id="main">
+    <main id="main" tabindex="-1">
       <section class="hero" aria-labelledby="hero-title">
         <div class="hero-grid" aria-hidden="true"></div>
         <div class="shell hero-layout">
@@ -78,7 +78,7 @@
             </div>
           </div>
 
-          <div class="network-card reveal" aria-label="Connected business technology overview">
+          <div class="network-card reveal" aria-hidden="true">
             <div class="network-card-top">
               <span>BluePeak service network</span>
               <span class="status"><i></i> Connected</span>
@@ -224,13 +224,13 @@
             <div class="contact-card-head">
               <p class="eyebrow dark"><span></span> Start a conversation</p>
               <h2>How can BluePeak help?</h2>
-              <p>Tell us what you’re working through. We’ll follow up to understand the need and discuss the right next step.</p>
+              <p>Tell us what you’re working through. We’ll follow up to understand the need and discuss the right next step. All fields except Company are required.</p>
             </div>
 
             <form id="contact-form">
               <div class="field-row">
                 <label>
-                  <span>Name</span>
+                  <span>Name (required)</span>
                   <input type="text" name="name" autocomplete="name" required placeholder="Your name" />
                 </label>
                 <label>
@@ -239,7 +239,7 @@
                 </label>
               </div>
               <label>
-                <span>What do you need help with?</span>
+                <span>What do you need help with? (required)</span>
                 <select name="service" id="service-select" required>
                   <option value="" disabled selected>Select a service</option>
                   <option>Helpdesk Support</option>
@@ -251,7 +251,7 @@
                 </select>
               </label>
               <label>
-                <span>Briefly describe your need</span>
+                <span>Briefly describe your need (required)</span>
                 <textarea name="message" rows="4" required placeholder="What would you like to improve or fix?"></textarea>
               </label>
               <button class="button button-primary submit-button" type="submit">
@@ -277,7 +277,7 @@
       <div class="shell footer-inner">
         <a class="brand footer-brand" href="#top" aria-label="BluePeak Managed IT home">
           <span class="brand-mark" aria-hidden="true">
-            <svg viewBox="0 0 48 48"><path d="M7 34.5 19 16l5.2 8L29 17l12 17.5H7Z" /><path class="brand-signal" d="M13 34.5h28" /></svg>
+            <svg aria-hidden="true" focusable="false" viewBox="0 0 48 48"><path d="M7 34.5 19 16l5.2 8L29 17l12 17.5H7Z" /><path class="brand-signal" d="M13 34.5h28" /></svg>
           </span>
           <span class="brand-copy"><strong>BluePeak</strong><span>Managed IT</span></span>
         </a>

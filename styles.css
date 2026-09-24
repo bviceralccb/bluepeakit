@@ -4,7 +4,7 @@
   --navy-950: #061329;
   --navy-900: #081a35;
   --navy-800: #0b2446;
-  --blue-600: #087cf0;
+  --blue-600: #075bb5;
   --blue-500: #1c99ff;
   --blue-300: #75d1ff;
   --cyan-200: #a7e9ff;
@@ -300,7 +300,7 @@ h1 {
 
 .button-primary {
   color: var(--white);
-  background: linear-gradient(135deg, var(--blue-600), var(--blue-500));
+  background: linear-gradient(135deg, #075bb5, #0069d0);
   box-shadow: 0 12px 32px rgba(8, 124, 240, 0.3);
 }
 
@@ -462,7 +462,7 @@ h1 {
 .network-metrics span {
   display: block;
   margin-top: 5px;
-  color: rgba(255, 255, 255, 0.46);
+  color: rgba(255, 255, 255, 0.7);
   font-size: 0.67rem;
 }
 
@@ -533,7 +533,7 @@ h1 {
   position: absolute;
   top: 21px;
   right: 23px;
-  color: #cdd8e4;
+  color: #53647a;
   font-family: "Manrope", sans-serif;
   font-size: 0.73rem;
   font-weight: 700;
@@ -733,7 +733,6 @@ input, select, textarea {
   width: 100%;
   border: 1px solid #cfdae6;
   border-radius: 10px;
-  outline: none;
   color: var(--ink);
   background: #fafdff;
   transition: border-color 160ms ease, box-shadow 160ms ease, background 160ms ease;
@@ -742,10 +741,10 @@ input, select, textarea {
 input, select { height: 46px; padding: 0 13px; }
 textarea { min-height: 102px; padding: 11px 13px; resize: vertical; }
 
-input::placeholder, textarea::placeholder { color: #92a0af; }
+input::placeholder, textarea::placeholder { color: #5f6e81; }
 
 input:focus, select:focus, textarea:focus {
-  border-color: var(--blue-500);
+  border-color: var(--blue-600);
   background: var(--white);
   box-shadow: 0 0 0 4px rgba(28, 153, 255, 0.1);
 }
@@ -759,7 +758,7 @@ input:focus, select:focus, textarea:focus {
 
 .form-note {
   margin: -7px 0 0;
-  color: #7b8998;
+  color: var(--muted);
   font-size: 0.72rem;
   text-align: center;
 }
@@ -784,7 +783,8 @@ input:focus, select:focus, textarea:focus {
 .direct-contact a {
   color: var(--blue-600);
   font-weight: 700;
-  text-decoration: none;
+  text-decoration: underline;
+  text-underline-offset: 2px;
 }
 
 .direct-contact a:hover { text-decoration: underline; }
@@ -815,12 +815,6 @@ input:focus, select:focus, textarea:focus {
 .site-footer p:last-child { justify-self: end; }
 
 .reveal {
-  opacity: 0;
-  transform: translateY(18px);
-  transition: opacity 700ms ease, transform 700ms ease;
-}
-
-.reveal.is-visible {
   opacity: 1;
   transform: translateY(0);
 }
@@ -938,6 +932,13 @@ input:focus, select:focus, textarea:focus {
 }
 
 :focus-visible {
-  outline: 3px solid var(--blue-300);
+  outline: 3px solid var(--blue-600);
   outline-offset: 3px;
+}
+
+.site-header :focus-visible,
+.hero :focus-visible,
+.approach :focus-visible,
+.site-footer :focus-visible {
+  outline-color: var(--blue-300);
 }

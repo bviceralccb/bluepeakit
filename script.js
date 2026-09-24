@@ -13,10 +13,28 @@ navToggle.addEventListener('click', () => {
   setMenu(navToggle.getAttribute('aria-expanded') !== 'true');
 });
 
-navLinks.forEach((link) => link.addEventListener('click', () => setMenu(false)));
+navLinks.forEach((link) => link.addEventListener('click', () => {
+  const wasOpen = navToggle.getAttribute('aria-expanded') === 'true';
+  setMenu(false);
+  if (wasOpen && link.hash) {
+    const destination = document.querySelector(link.hash);
+    if (destination) {
+      destination.setAttribute('tabindex', '-1');
+      destination.focus({ preventScroll: true });
+    }
+  }
+}));
+
+window.matchMedia('(min-width: 821px)').addEventListener('change', (event) => {
+  if (event.matches) setMenu(false);
+});
 
 document.addEventListener('keydown', (event) => {
-  if (event.key === 'Escape') setMenu(false);
+  if (event.key === 'Escape' && navToggle.getAttribute('aria-expanded') === 'true') {
+    const focusWasInMenu = primaryNav.contains(document.activeElement);
+    setMenu(false);
+    if (focusWasInMenu) navToggle.focus();
+  }
 });
 
 const serviceSelect = document.querySelector('#service-select');
@@ -51,22 +69,3 @@ contactForm.addEventListener('submit', (event) => {
 });
 
 document.querySelector('#year').textContent = new Date().getFullYear();
-
-const revealItems = document.querySelectorAll('.reveal');
-if ('IntersectionObserver' in window) {
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('is-visible');
-          observer.unobserve(entry.target);
-        }
-      });
-    },
-    { threshold: 0.12 }
-  );
-
-  revealItems.forEach((item) => observer.observe(item));
-} else {
-  revealItems.forEach((item) => item.classList.add('is-visible'));
-}
