@@ -797,7 +797,7 @@ input:focus, select:focus, textarea:focus {
 .direct-contact a:hover { text-decoration: underline; }
 
 .site-footer {
-  padding: 28px 0;
+  padding: 28px 0 90px;
   color: rgba(255, 255, 255, 0.52);
   background: var(--navy-950);
   border-top: 1px solid rgba(255, 255, 255, 0.08);
@@ -820,6 +820,92 @@ input:focus, select:focus, textarea:focus {
 }
 
 .site-footer p:last-child { justify-self: end; }
+
+.footer-meta {
+  display: grid;
+  gap: 7px;
+  justify-items: center;
+  text-align: center;
+}
+
+.footer-meta a {
+  color: var(--white);
+  font-size: 0.8rem;
+  text-underline-offset: 3px;
+}
+
+.accessibility-fab {
+  position: fixed;
+  right: max(20px, env(safe-area-inset-right));
+  bottom: max(20px, env(safe-area-inset-bottom));
+  z-index: 40;
+  display: grid;
+  place-items: center;
+  width: 56px;
+  height: 56px;
+  border: 2px solid var(--white);
+  border-radius: 50%;
+  color: var(--white);
+  background: var(--blue-600);
+  box-shadow: 0 8px 26px rgba(6, 19, 41, 0.35);
+  transition: transform 180ms ease, box-shadow 180ms ease;
+}
+
+.accessibility-fab:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 30px rgba(6, 19, 41, 0.45);
+}
+
+.accessibility-fab:focus-visible {
+  outline: 3px solid var(--white);
+  outline-offset: 3px;
+  box-shadow: 0 0 0 7px var(--navy-950);
+}
+
+.accessibility-fab svg {
+  width: 29px;
+  height: 29px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.accessibility-fab circle { fill: currentColor; stroke: none; }
+
+.accessibility-page { background: var(--surface); }
+
+.accessibility-header {
+  padding: 20px 0;
+  color: var(--white);
+  background: var(--navy-950);
+}
+
+.accessibility-header .shell {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.accessibility-header nav a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  color: var(--white);
+  text-underline-offset: 3px;
+}
+
+.accessibility-main {
+  max-width: 760px;
+  padding-block: clamp(65px, 8vw, 110px);
+}
+
+.accessibility-main h1 { font-size: clamp(2.5rem, 5vw, 4rem); }
+.accessibility-main h2 { margin-top: 45px; font-size: 1.65rem; }
+.accessibility-main p { color: var(--ink); line-height: 1.75; }
+.accessibility-main a { color: var(--blue-600); text-underline-offset: 3px; }
 
 .reveal {
   opacity: 1;
@@ -930,6 +1016,7 @@ input:focus, select:focus, textarea:focus {
   .contact-card { border-radius: 19px; }
   .direct-contact { align-items: flex-start; flex-direction: column; }
   .direct-contact div { justify-items: start; }
+  .accessibility-fab { right: 16px; bottom: max(16px, env(safe-area-inset-bottom)); width: 52px; height: 52px; }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -949,3 +1036,5 @@ input:focus, select:focus, textarea:focus {
 .site-footer :focus-visible {
   outline-color: var(--blue-300);
 }
+
+.accessibility-header :focus-visible { outline-color: var(--blue-300); }
