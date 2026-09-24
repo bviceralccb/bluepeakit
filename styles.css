@@ -135,6 +135,9 @@ svg {
 
 .primary-nav a {
   position: relative;
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
   color: rgba(255, 255, 255, 0.78);
   text-decoration: none;
   transition: color 180ms ease;
@@ -595,6 +598,7 @@ h1 {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  min-height: 44px;
   gap: 10px;
   margin-top: auto;
   padding-top: 18px;
@@ -781,6 +785,9 @@ input:focus, select:focus, textarea:focus {
 }
 
 .direct-contact a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 32px;
   color: var(--blue-600);
   font-weight: 700;
   text-decoration: underline;
